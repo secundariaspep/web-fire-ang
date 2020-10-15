@@ -1,0 +1,20 @@
+<mat-list>
+  <mat-list-item routerLink="{{routes.DASHBOARD}}" routerLinkActive="active">
+    <mat-icon>home</mat-icon> Inicio
+  </mat-list-item>
+  <mat-list-item routerLink="{{routes.NOTIFICATION}}" routerLinkActive="active">
+    <mat-icon>notifications_none</mat-icon> Notification
+  </mat-list-item>
+  <mat-list-item (click)="openUiElements()" [matMenuTriggerFor]="supervision">
+    <mat-icon>filter_none</mat-icon> Supervisión
+  </mat-list-item>
+    <div>
+    <mat-menu #supervision="matMenu">
+      <button mat-menu-item class="ui-element" routerLink="{{routes.UI_ELEMENTS_ICONS}}" routerLinkActive="active">
+        <div class="circle"></div>Socio Educativo
+      </button>
+    </mat-menu>
+    </div>
+</mat-list>
+
+
