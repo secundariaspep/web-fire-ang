@@ -27,6 +27,7 @@ import { YearPipe } from './pipes';
 import { SnackBarComponent } from './components/snackbar/snackbar.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   imports: [
@@ -53,13 +54,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatDatepickerModule,
     MatSidenavModule,
   ],
-  declarations: [SnackBarComponent, AlertComponent, NotFoundComponent, YearPipe],
+  declarations: [SnackBarComponent, AlertComponent, NotFoundComponent, YearPipe, BreadcrumbComponent],
   exports: [
     CommonModule,
     SnackBarComponent,
     AlertComponent,
     NotFoundComponent,
     YearPipe,
+    BreadcrumbComponent,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,

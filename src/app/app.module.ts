@@ -17,6 +17,9 @@ import { SendEmailComponent } from './auth/containers/send-email/send-email.comp
 // import { AuthService } from '@auth/services/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { ProfileModule } from './profile/profile.module';
+import { SupervisionModule } from './supervision/supervision.module';
+
 
 // import { CanSuscriptorGuard } from '@app/auth/guards/can-suscriptor.guard';
 // import { CanAdminGuard } from '@auth/guards/can-admin.guard';
@@ -35,6 +38,8 @@ import { HomeModule } from './home/home.module';
     AngularFireStorageModule,
     AuthModule,
     HomeModule,
+    ProfileModule,
+    SupervisionModule,
   ],
   providers: [
     // AuthService,
