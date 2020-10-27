@@ -1,20 +1,56 @@
-<mat-list>
+<mat-list class="sidebar">
+  <mat-list-item routerLink="{{routes.PROFILE}}" routerLinkActive="active">
+    <mat-icon>account_circle</mat-icon> Profile
+  </mat-list-item>
+
   <mat-list-item routerLink="{{routes.DASHBOARD}}" routerLinkActive="active">
     <mat-icon>home</mat-icon> Inicio
   </mat-list-item>
-  <mat-list-item routerLink="{{routes.NOTIFICATION}}" routerLinkActive="active">
-    <mat-icon>notifications_none</mat-icon> Notification
-  </mat-list-item>
-  <mat-list-item (click)="openUiElements()" [matMenuTriggerFor]="supervision">
-    <mat-icon>filter_none</mat-icon> Supervisión
-  </mat-list-item>
-    <div>
-    <mat-menu #supervision="matMenu">
-      <button mat-menu-item class="ui-element" routerLink="{{routes.UI_ELEMENTS_ICONS}}" routerLinkActive="active">
-        <div class="circle"></div>Socio Educativo
-      </button>
-    </mat-menu>
-    </div>
+
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+
+    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" class="mat-node">
+      <div *ngIf="node.name === 'User'" class="mat-tree-item" matTreeNodeToggle>
+        <div>
+          <mat-icon>person</mat-icon>
+          <p matBadge="New" matBadgeColor="warn">{{node.name}}</p>
+        </div>
+        <mat-icon
+          [ngClass]="{rotateUp: treeControl.isExpanded(node), rotateDown: !treeControl.isExpanded(node)}"
+        >keyboard_arrow_down
+        </mat-icon>
+      </div>
+    </mat-tree-node>
+
+  </mat-tree>
+
 </mat-list>
 
+<mat-list>
+  <p class="sidebar-title">Supervisión</p>
 
+  <mat-tree [dataSource]="templateDataSource" [treeControl]="treeControl">
+
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding routerLink="{{node.route}}" routerLinkActive="{{node.active}}">
+      <div class="mat-tree-second-item">
+        <div class="circle"></div>
+        <p>{{node.name}}</p>
+      </div>
+    </mat-tree-node>
+
+    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" class="mat-node">
+      <div *ngIf="node.name === 'Core'" class="mat-tree-item" matTreeNodeToggle>
+        <div>
+          <mat-icon>apps</mat-icon>
+          <p>{{node.name}}</p>
+        </div>
+        <mat-icon
+          [ngClass]="{rotateUp: treeControl.isExpanded(node), rotateDown: !treeControl.isExpanded(node)}"
+        >keyboard_arrow_down
+        </mat-icon>
+      </div>
+
+    </mat-tree-node>
+
+  </mat-tree>
+</mat-list>

@@ -1,4 +1,4 @@
-@import "palettes";
+// @import "palettes";
 @import "mat-card";
 @import "mat-paginator";
 @import "mat-table";
@@ -14,6 +14,8 @@
 @import "mat-tooltip";
 @import "calendar";
 
+@include mat-core();
+
 @function ama-light-theme($primary, $accent, $warn, $success, $info, $primary-light) {
   @return map-merge(
     mat-light-theme($primary, $accent, $warn),
@@ -25,12 +27,12 @@
 /**        BLUE THEME            **/
 /**********************************/
 
-$blue-theme-primary: mat-palette($ama-blue);
-$blue-theme-primary-light: mat-palette($ama-light-blue);
-$blue-theme-accent: mat-palette($ama-yellow);
-$blue-theme-warn: mat-palette($ama-pink);
-$blue-theme-success: mat-palette($ama-green);
-$blue-theme-info: mat-palette($ama-violet);
+$blue-theme-primary: mat-palette($mat-blue);
+$blue-theme-primary-light: mat-palette($mat-light-blue);
+$blue-theme-accent: mat-palette($mat-yellow);
+$blue-theme-warn: mat-palette($mat-pink);
+$blue-theme-success: mat-palette($mat-green);
+$blue-theme-info: mat-palette($mat-purple);
 
 $blue-theme: ama-light-theme(
   $blue-theme-primary,
@@ -72,12 +74,12 @@ $blue-theme: ama-light-theme(
 /**        PINK THEME            **/
 /**********************************/
 
-$pink-theme-primary: mat-palette($ama-pink);
-$pink-theme-primary-light: mat-palette($ama-light-blue);
-$pink-theme-accent: mat-palette($ama-yellow);
-$pink-theme-warn: mat-palette($ama-blue);
-$pink-theme-success: mat-palette($ama-green);
-$pink-theme-info: mat-palette($ama-violet);
+$pink-theme-primary: mat-palette($mat-pink);
+$pink-theme-primary-light: mat-palette($mat-light-blue);
+$pink-theme-accent: mat-palette($mat-yellow);
+$pink-theme-warn: mat-palette($mat-blue);
+$pink-theme-success: mat-palette($mat-green);
+$pink-theme-info: mat-palette($mat-purple);
 
 $pink-theme: ama-light-theme(
   $pink-theme-primary,
@@ -118,12 +120,12 @@ $pink-theme: ama-light-theme(
 /**       GREEN THEME            **/
 /**********************************/
 
-$green-theme-primary: mat-palette($ama-green);
-$green-theme-primary-light: mat-palette($ama-light-blue);
-$green-theme-accent: mat-palette($ama-yellow);
-$green-theme-warn: mat-palette($ama-pink);
-$green-theme-success: mat-palette($ama-blue);
-$green-theme-info: mat-palette($ama-violet);
+$green-theme-primary: mat-palette($mat-green);
+$green-theme-primary-light: mat-palette($mat-light-blue);
+$green-theme-accent: mat-palette($mat-yellow);
+$green-theme-warn: mat-palette($mat-pink);
+$green-theme-success: mat-palette($mat-blue);
+$green-theme-info: mat-palette($mat-purple);
 
 $green-theme: ama-light-theme(
   $green-theme-primary,

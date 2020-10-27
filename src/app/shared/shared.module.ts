@@ -21,6 +21,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatTreeModule} from '@angular/material/tree';
+
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 
 import { YearPipe } from './pipes';
 
@@ -28,6 +36,11 @@ import { SnackBarComponent } from './components/snackbar/snackbar.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   imports: [
@@ -53,6 +66,11 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     MatTabsModule,
     MatDatepickerModule,
     MatSidenavModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatChipsModule,
+    MatTreeModule,
+    FullCalendarModule,
   ],
   declarations: [SnackBarComponent, AlertComponent, NotFoundComponent, YearPipe, BreadcrumbComponent],
   exports: [
@@ -81,7 +99,11 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     MatTabsModule,
     MatDatepickerModule,
     MatSidenavModule,
-
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatChipsModule,
+    MatTreeModule,
+    FullCalendarModule
   ],
   providers: [],
   entryComponents: [SnackBarComponent],

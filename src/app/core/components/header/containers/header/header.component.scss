@@ -3,7 +3,6 @@
 @import 'src/app/shared/styles/variables';
 
 .header {
-  background-color: $header-background-color;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -17,7 +16,7 @@
 
   &__title-button {
     background-color: $header-button-background-color;
-    box-shadow: none;
+    box-shadow: $header-button-box-shadow;
 
     &:hover {
       background-color: $header-button-background-color-hover;

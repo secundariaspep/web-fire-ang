@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Email, User } from '@core/models';
@@ -21,9 +21,9 @@ export class HeaderComponent {
   constructor(
     private userService: AuthService,
     // private emailService: EmailService,
-    private router: Router,
-    private ngZone: NgZone
+    private router: Router
   ) {
+    this.user$ = this.userService.getUser();
     // this.emails$ = this.emailService.loadEmails();
   }
 

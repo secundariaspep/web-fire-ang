@@ -9,6 +9,7 @@ import {
 } from './components';
 import { ShortNamePipe } from './pipes';
 import { HeaderComponent } from './containers';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { HeaderComponent } from './containers';
     SearchComponent,
     ShortNamePipe,
   ],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, SearchComponent, ShortNamePipe],
   imports: [
     CommonModule,
     SharedModule,
+    RouterModule
   ],
 })
 export class HeaderModule {}

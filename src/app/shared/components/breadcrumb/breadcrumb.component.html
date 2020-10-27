@@ -1,27 +1,24 @@
-<app-breadcrumb ng-reflect-path="/user/profile">
-  <mat-card class="mat-card mat-focus-indicator breadcrumb-card">
-    <mat-card-content class="mat-card-content">
+<mat-card class="breadcrumb-card">
+  <mat-card-content>
+    <mat-list class="breadcrumb-list">
+      <mat-list-item
+        class="breadcrumb-list-item"
+        [routerLink]="routes.DASHBOARD"
+      ><span>Inicio</span> <mat-icon class="icon">keyboard_arrow_right</mat-icon>
+      </mat-list-item>
 
-      <mat-list class="mat-list mat-list-base breadcrumb-list">
-        <mat-list-item
-              class="mat-list-item mat-focus-indicator breadcrumb-list-item"
-              tabindex="0"
-              *ngFor="let breadcrumb of breadcrumbs">
-          <div class="mat-list-item-content">
-            <div
-              mat-ripple=""
-              class="mat-ripple mat-list-item-ripple">
-            </div>
-            <div class="mat-list-text"></div>
-            <span [routerLink]="breadcrumb.url" routerLinkActive="router-link-active">{{ breadcrumb.label }}</span>
-            <mat-icon
-                  role="img"
-                  class="mat-icon notranslate icon material-icons mat-icon-no-color"
-                  aria-hidden="true"
-                  >keyboard_arrow_right</mat-icon>
-          </div>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-  </app-breadcrumb>
+      <mat-list-item
+        *ngFor="let elem of pathElements"
+        class="breadcrumb-list-item"
+        [routerLink]="'/'+elem"
+      ><span class="text">{{elem}}</span> <mat-icon class="icon">keyboard_arrow_right</mat-icon>
+      </mat-list-item>
+
+      <mat-list-item
+        class="breadcrumb-list-item active"
+        [routerLink]="path"
+      ><span class="text">{{lastElement}}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

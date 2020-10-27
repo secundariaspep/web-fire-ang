@@ -4,10 +4,8 @@
 .footer {
   height: $footer-height;
   margin-top: 40px;
-  width: $footer-width;
   display: flex;
   justify-content: space-between;
-  padding: 0 24px 24px 24px;
 
   @media (max-width: $small) {
     flex-direction: column;
@@ -31,7 +29,6 @@
 
   &__link-item {
     margin-right: 16px;
-    color: $footer-link-color;
     text-decoration: none;
 
     &:hover {
@@ -40,9 +37,9 @@
   }
 }
 
-.mat-mini-fab {
+.footer-button {
   box-shadow: none;
-  background-color: inherit;
+  background-color: transparent;
   width: 46px;
   height: 46px;
 

@@ -1,5 +1,13 @@
 export enum routes {
   DASHBOARD = '/home',
+
+  //--- User module ---//
+
+  PROFILE = '/user/profile',
+  USER_LIST = '/user/list',
+  USER_ADD = '/user/add',
+  USER_EDIT = '/user/edit',
+
   TYPOGRAPHY = '/typography',
   TABLES = '/tables',
   NOTIFICATION = '/notification',
