@@ -1,0 +1,6 @@
+<mat-select class="date-menu" [(ngModel)]="selectedMatSelectValue" (selectionChange)="changedMatSelectionValue($event.value)">
+  <mat-option class="date-option" [value]="matSelectFields.daily">Día</mat-option>
+  <mat-option class="date-option" [value]="matSelectFields.weekly">Semana</mat-option>
+  <mat-option class="date-option" [value]="matSelectFields.monthly">Mes</mat-option>
+</mat-select>
+

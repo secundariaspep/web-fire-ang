@@ -5,9 +5,11 @@ import { CanAdminGuard } from '@auth/guards/can-admin.guard';
 import { CanSuscriptorGuard } from '@auth/guards/can-suscriptor.guard';
 import { CanEditGuard } from '@auth/guards/can-edit.guard';
 
+import { HomePageComponent } from './home/containers';
 import { AuthComponent } from './auth/containers/auth/auth.component';
 import { SendEmailComponent } from '@auth/containers/send-email/send-email.component';
 import { NotFoundComponent } from '@shared/components/not-found/not-found.component';
+import { LayoutComponent } from '@core/containers/layout/layout.component';
 import { AuthGuard } from './auth/guards';
 
 const routes: Routes = [
@@ -15,11 +17,27 @@ const routes: Routes = [
     path: '',
     redirectTo: '/auth/login',
     pathMatch: 'full',
-  },
-  {
-    path: 'home',
-   // canActivate: [AuthGuard],
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+  },{
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'home',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        children: [
+          {
+            path: '',
+            component: HomePageComponent
+          }
+        ]
+      },
+      {
+        path: 'user',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+      },
+    ]
   },
   {
     path: 'auth',

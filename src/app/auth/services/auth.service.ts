@@ -33,10 +33,13 @@ export class AuthService extends RoleValidator {
         this.userData = JSON.parse(JSON.stringify(user));
         this.user$ = this.userData.providerData[0];
         localStorage.setItem('user', JSON.stringify(this.userData));
+        localStorage.setItem('token', JSON.stringify(this.userData.stsTokenManager.accessToken));
         JSON.parse(localStorage.getItem('user'));
       } else {
         localStorage.setItem('user', null);
+        localStorage.setItem('token', null);
         JSON.parse(localStorage.getItem('user'));
+        JSON.parse(localStorage.getItem('token'));
       }
     });
   }

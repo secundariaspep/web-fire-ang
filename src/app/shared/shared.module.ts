@@ -36,6 +36,7 @@ import { SnackBarComponent } from './components/snackbar/snackbar.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { DateMenuComponent } from './components/date-menu/date-menu.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -72,7 +73,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatTreeModule,
     FullCalendarModule,
   ],
-  declarations: [SnackBarComponent, AlertComponent, NotFoundComponent, YearPipe, BreadcrumbComponent],
+  declarations: [SnackBarComponent, AlertComponent, NotFoundComponent, YearPipe, BreadcrumbComponent, DateMenuComponent],
   exports: [
     CommonModule,
     SnackBarComponent,
